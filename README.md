@@ -13,35 +13,38 @@
 - [O] 4.발생 가능한 에러를 찾아서 디버깅을 했나요?
 - [O] 5.코드를 더 개선시켰나요?
 
-# 예시
+# 리뷰 설명
 1. 코드의 작동 방식을 주석으로 기록합니다.
 2. 코드의 작동 방식에 대한 개선 방법을 주석으로 기록합니다.
-3. 참고한 링크 및 ChatGPT 프롬프트 명령어가 있다면 주석으로 남겨주세요.
+3. 참고한 링크는 '초보자를 위한 파이썬 300제'의 역순으로 단어 불러오기 [::-1]
 ---
 ```python
-# 사칙 연산 계산기
-class calculator:
-    # 예) init의 역할과 각 매서드의 의미를 서술
-    def __init__(self, first, second):  # 주석달기
-        self.first = first
-        self.second = second
-    
-    # 예) 덧셈과 연산 작동 방식에 대한 서술
-    def add(self):
-        result = self.first + self.second
-        return result
+# 회문 만들기
 
-a = float(input('첫번째 값을 입력하세요.')) 
-b = float(input('두번째 값을 입력하세요.')) 
-c = calculator(a, b)
-print('덧셈', c.add()) 
+def palindrome():
+
+word = input("이름을 입력해 주세요: " ) # 단어 입력 창 만들기
+reverse_word = "" # reverse_word를 '무'로 지정
+
+# (변경전) 코드
+for i in range(1,len(word)+1): # 첫번째 단어부터 끝에 있는 단어의 순서를 부여
+reverse_word += word[-i] # 글씨를 역순으로 차례대로 불러온 것을 reverse_word로 지정
+
+# (변경후) 코드
+reverse_word = word[::-1] # for문과 range문을 쓰지 않고 조금 더 직관적인 코드로 변경
+
+print("뒤집힌 단어는:",reverse_word)
+
+if word == reverse_word:
+print('입력된 단어는 회문입니다.')
+else:
+print('입력된 단어는 회문이 아닙니다.')
 ```
 text입니다.
 
 # 참고 링크 및 코드 개선 여부
 ---
 ```python
-#
-#
-#
-#
+# '초보자를 위한 파이썬 300제' https://wikidocs.net/7022
+# 리뷰를 통해 기존의 코드 2줄을 1줄로 변경함
+
