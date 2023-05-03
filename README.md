@@ -22,7 +22,7 @@
 # 사칙 연산 계산기
 class calculator:
     # 예) init의 역할과 각 매서드의 의미를 서술
-    def __init__(self, first, second):
+    def __init__(self, first, second):  # 주석달기
         self.first = first
         self.second = second
     
@@ -36,6 +36,7 @@ b = float(input('두번째 값을 입력하세요.'))
 c = calculator(a, b)
 print('덧셈', c.add()) 
 ```
+text입니다.
 
 # 참고 링크 및 코드 개선 여부
 ---
