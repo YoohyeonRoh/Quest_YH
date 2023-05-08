@@ -25,20 +25,20 @@
      # https://m.blog.naver.com/javaking75/220740422160
    
      pip install ColabTurtlePlus
-from ColabTurtlePlus.Turtle import *
+     from ColabTurtlePlus.Turtle import *
 
-turtle = Turtle() # 터틀 객체 생성
+     turtle = Turtle() # 터틀 객체 생성
 
-turtle.goto(0,0)  # 시작 위치 설정
+   turtle.goto(0,0)  # 시작 위치 설정
 
 
-maze = [
-[0, 1, 0, 0, 0],
-[0, 0, 0, 1, 0],
-[0, 1, 1, 0, 0],
-[0, 0, 1, 1, 0],
-[0, 0, 0, 0, 0]
-]
+   maze = [
+   [0, 1, 0, 0, 0],
+   [0, 0, 0, 1, 0],
+   [0, 1, 1, 0, 0],
+   [0, 0, 1, 1, 0],
+   [0, 0, 0, 0, 0]
+   ]
    ```python
    
    - Code 에 대한 리뷰어의 Comment 를 남겨주세요
