@@ -19,9 +19,10 @@
 1. 코드의 작동 방식을 주석으로 기록합니다.
 2. 코드의 작동 방식에 대한 개선 방법을 주석으로 기록합니다.
 3. 참고한 링크 및 ChatGPT 프롬프트 명령어가 있다면 주석으로 남겨주세요.
-  # https://m.blog.naver.com/javaking75/220740422160
    
    ```python
+   
+     # https://m.blog.naver.com/javaking75/220740422160
    
      pip install ColabTurtlePlus
 from ColabTurtlePlus.Turtle import *
