@@ -19,18 +19,16 @@
 1. 코드의 작동 방식을 주석으로 기록합니다.
 2. 코드의 작동 방식에 대한 개선 방법을 주석으로 기록합니다.
 3. 참고한 링크 및 ChatGPT 프롬프트 명령어가 있다면 주석으로 남겨주세요.
-   신노아님이 참고한 링크: # https://m.blog.naver.com/javaking75/220740422160
+  # https://m.blog.naver.com/javaking75/220740422160
    
    ```python
    
      pip install ColabTurtlePlus
 from ColabTurtlePlus.Turtle import *
 
-# 터틀 객체 생성
-turtle = Turtle()
+turtle = Turtle() # 터틀 객체 생성
 
-# 시작 위치 설정
-turtle.goto(0,0)
+turtle.goto(0,0)  # 시작 위치 설정
 
 # 미로
 maze = [
