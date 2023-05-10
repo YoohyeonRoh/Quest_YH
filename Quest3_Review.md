@@ -74,9 +74,12 @@ print(f"The most frequent pair of bigrams is '{most_frequent_bigram}' with a cou
 
 # print(most_common_ngram)
 ```
+```
+#  Code 에 대한 리뷰어의 Comment 를 남겨주세요
+코드는 간결하고 완벽하게 작성하셨습니다. 다만 파일이 안불러와져서 코드가 작동하는 것을 보지 못한 아쉬움이 있습니다.
 
 ---
 
 # 참고 링크 및 코드 개선 여부
 ---
-코드는 간결하고 완벽하게 작성하셨습니다. 다만 파일이 안불러와져서 코드가 작동하는 것을 보지 못한 아쉬움이 있습니다.
+
