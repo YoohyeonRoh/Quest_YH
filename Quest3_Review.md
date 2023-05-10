@@ -20,9 +20,9 @@
 2. 코드의 작동 방식에 대한 개선 방법을 주석으로 기록합니다.
 3. 참고한 링크 및 ChatGPT 프롬프트 명령어가 있다면 주석으로 남겨주세요.
    
-   ```python
+```python
    
-     import re
+import re
 from collections import Counter
 
 
@@ -73,6 +73,8 @@ print(f"The most frequent pair of bigrams is '{most_frequent_bigram}' with a cou
 # most_common_ngram = Counter(ngrams).most_common(1)
 
 # print(most_common_ngram)
+```
+
 ---
 
 # 참고 링크 및 코드 개선 여부
