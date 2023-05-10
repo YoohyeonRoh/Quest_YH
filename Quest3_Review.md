@@ -79,4 +79,4 @@ print(f"The most frequent pair of bigrams is '{most_frequent_bigram}' with a cou
 
 # 참고 링크 및 코드 개선 여부
 ---
-개선을 해주고 싶지만, 저도 아직 미로찾기 코드를 숙지하지 못해서 못했습니다. 
+코드는 간결하고 완벽하게 작성하셨습니다. 다만 파일이 안불러와져서 코드가 작동하는 것을 보지 못한 아쉬움이 있습니다.
