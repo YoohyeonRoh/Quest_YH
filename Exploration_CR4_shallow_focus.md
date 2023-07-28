@@ -1,7 +1,7 @@
 # Code Peer Review Templete
 ---
 - 코더 : 노유현
-- 리뷰어 : OOO
+- 리뷰어 : 박기용
 
 
 # PRT(PeerReviewTemplate)
@@ -20,23 +20,41 @@
 
 ---
 ```python
-# text와 headlines에 적용해 우리가 결정한 임의의 길이(text: 50, headlines: 8)가 몇 %의 샘플까지 포함하는 지 확인
-below_threshold_len(text_max_len, data['text'])
-below_threshold_len(headlines_max_len,  data['headlines'])
-# 해당 코드에서 왜 56%만 남기는지 잘 설명하셨습니다.
-```
-```python
-# 실제 요약, 추출요약, 예측요약을 같이 확인하고 싶다고 하셔서 아래 코드로 실행해보는걸 제안드렸습니다.
-for i, (head, text) in enumerate(zip(data['headlines'], data['text'])):
-  if i == 3:
-    break
-  print(f'실제요약: {head}')
-  print('추출요약: '. summarize(text, ratio=0.30)
-  print('예측 요약: ', decode_sequence(encoder_input_test[i].reshape(1, text_max_len)))
+# 리뷰 :  model 을 반복해서 호출되어 있는데 , model Train 을 하는 상황이 아니라서 이렇게 반복적으로 불러올 필요는 없을 것 같습니다.
+# 이미 학습되어 있는 model 의 가중치를 호출해서 모든 파일에 적용해서 사용 하는 하고 있어서 , 차후에는 그렇게 적용하시면 일이 많이 편해지시지 않을까 생각 됩니다. !!
+# 아래 코드에 대한 리뷰 이니 참고 부탁 드리겠습니다.
+
+
+### 수정 하셨으면 하는 코드
+# 저장할 파일 이름을 결정합니다
+# 1. os.getenv(x)함수는 환경 변수x의 값을 포함하는 문자열 변수를 반환합니다. model_dir 에 "/aiffel/human_segmentation/models" 저장
+# 2. #os.path.join(a, b)는 경로를 병합하여 새 경로 생성 model_file 에 "/aiffel/aiffel/human_segmentation/models/deeplabv3_xception_tf_dim_ordering_tf_kernels.h5" 저장
+# 1
+model_dir2 = os.getenv('HOME')+'/aiffel/human_segmentation/models' 
+# 2
+model_file2 = os.path.join(model_dir2, 'deeplabv3_xception_tf_dim_ordering_tf_kernels.h5') 
+
+# PixelLib가 제공하는 모델의 url입니다
+model_url2 = 'https://github.com/ayoolaolafenwa/PixelLib/releases/download/1.1/deeplabv3_xception_tf_dim_ordering_tf_kernels.h5' 
+
+# 다운로드를 시작합니다
+urllib.request.urlretrieve(model_url2, model_file2) # urllib 패키지 내에 있는 request 모듈의 urlretrieve 함수를 이용해서 model_url에 있는 파일을 다운로드 해서 model_file 파일명으로 저장
+('/aiffel/aiffel/human_segmentation/models/deeplabv3_xception_tf_dim_ordering_tf_kernels.h5',
+ <http.client.HTTPMessage at 0x7f096ac21880>)
+ # PixelLib 라이브러리 에서 가져온 클래스를 가져와서 semantic segmentation을 수행하는 클래스 인스턴스를 만듬
+model2 = semantic_segmentation()
+
+ # pascal voc에 대해 훈련된 예외 모델(model_file)을 로드하는 함수를 호출
+model2.load_pascalvoc_model(model_file2)
+# segmentAsPascalvoc()함수를 호출 하여 입력된 이미지를 분할, 
+# 분할 출력의 배열을 가져옴, 분할은 pacalvoc 데이터로 학습된 모델을 이용
+segvalues2, output2 = model2.segmentAsPascalvoc(img_path2)
+
+###
 ```
 
 # 참고 링크 및 코드 개선 여부
 ---
 ```python
-# '초보자를 위한 파이썬 300제' https://wikidocs.net/7022
-# 리뷰를 통해 기존의 코드 2줄을 1줄로 변경함
+# 코드가 반복 되는 부분이 있어서 해당 부분만 리뷰 했습니다. 수고 하셨습니다.
+# 
